@@ -11,7 +11,3 @@ type Identity struct {
 	Name string
 }
 
-type Request struct {
-	Identity string
-	Credential string
-}

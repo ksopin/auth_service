@@ -1,6 +1,6 @@
 package auth
 
 type Service interface {
-	Authenticate(r *Request) (*Identity, error)
+	Authenticate(identity, credential string) (*Identity, error)
 }
 

@@ -1,10 +1,14 @@
-package http
+package main
 
 import "github.com/gin-gonic/gin"
 
+
+func main() {
+	RunHttpServer()
+}
+
 func RunHttpServer() {
 	r := gin.Default()
-
 	r.Use(addHeaders)
 	InitRoutes(r)
 	r.Run(":8033")
@@ -20,5 +24,7 @@ func InitRoutes(engine *gin.Engine) {
 	engine.POST("/sign-in", signin)
 	engine.POST("/sign-out", signout)
 	engine.POST("/sign-up", signup)
+	engine.POST("/authenticated", isAuthenticated)
 }
+
 
